@@ -3,7 +3,7 @@
 }
 
 body {
-    flex-direction: r;
+    flex-direction: row;
     font-family: sans-serif;
 }
 
@@ -59,9 +59,10 @@ body {
 }
 
 button {
+    position: static;
     font-size: 1.5em;
     text-align: center;
-    padding: 20px;
+    padding: 1rem;
     background: -webkit-linear-gradient(top, #ddd, #d2d2d2);
     cursor: pointer;
     margin: 2px;
@@ -87,23 +88,24 @@ button:active {
     width: 40%;
     margin: 30px auto 0 auto;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: auto;
 }
 
 table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    border: 1px solid #ddd;
 }
 
 th,
 td {
     text-align: center;
     padding: 16px;
+    
 }
 
 th {
+    border: 1px solid #ddd;
     background-color: orange;
     color: white;
 }
@@ -113,11 +115,37 @@ tr:nth-child(even) {
 }
 
 @media screen and (max-width: 513px) {
+    .display,
+    .btn-area,
+    .history,
+    .flex-container-column,
+    .card {
+        position: static;
+        float: none;
+        max-width: none;
+    }
+
+
+
+    body {
+        display: contents;
+        flex-direction: column;
+    }
+
     .button {
         padding: 10px;
     }
 
-    .history {
-        width: 100%;
+    .flex-container-column {
+        margin: 5% auto;
+    }
+
+    .history,
+    .card {
+        width: 90vw;
+    }
+
+    table {
+        width:fit-content;
     }
 }
