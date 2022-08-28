@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    flex-direction: r;
+    font-family: sans-serif;
+}
+
+.card {
+    box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 30px;
+    width: 40%;
+    height: 30%;
+}
+
+.flex-container-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    float: left;
+    text-align: right;
+    margin-left: 10%;
+}
+
+.display {
+    position: relative;
+    color: white;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #333333;
+    border: 1px solid black;
+    font-size: 2em;
+    border-radius: 25px;
+}
+
+.btn-area {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". . . ."
+        ". . . ."
+        ". . . ."
+        ". . . equal"
+        "zero zero . equal";
+}
+
+.equal {
+    grid-area: equal;
+}
+
+.zero {
+    grid-area: zero;
+}
+
+button {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 20px;
+    background: -webkit-linear-gradient(top, #ddd, #d2d2d2);
+    cursor: pointer;
+    margin: 2px;
+    border: none;
+    border-radius: 10px;
+}
+
+button:hover {
+    font-weight: bold;
+}
+
+button:active {
+    background: -webkit-linear-gradient(top, #d2d2d2, #ddd);
+}
+
+
+
+.operator, .equal{
+    background: orange;
+}
+
+.history {
+    width: 40%;
+    margin: 30px auto 0 auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 16px;
+}
+
+th {
+    background-color: orange;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #d2d2d2;
+}
+
+@media screen and (max-width: 513px) {
+    .button {
+        padding: 10px;
+    }
+
+    .history {
+        width: 100%;
+    }
+}

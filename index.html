@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFA500">
+    <title>Kalkulator Sederhana - Hacktiv8_RCTN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel= "icon" href="icons/128x128-icon.png"type = "image/x-icon">
+    <link rel="apple-touch-icon" href="icons/192x192-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(function () {
+                    console.log('Service Worker Registered');
+                }).catch(function (err) {
+                    console.log(err);
+                });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.29/dist/sweetalert2.all.min.js"></script>
+</head>
+
+<body>
+    <div class="flex-container-column card">
+        <div class="display">
+            <h1 id="displayNumber">0</h1>
+        </div>
+        <div class="btn-area">
+            <button class="clear">AC</button>
+            <button id="btn" class="backspace">CE</button>
+            <button class="operator">/</button>
+            <button class="operator">x</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator ">-</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">+</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>.</button>
+            <button class="zero">0</button>
+            <button class="equal">=</button>
+        </div>
+
+    </div>
+    <div class="history card">
+        <h2>Riwayat Perhitungan</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Angka Pertama</th>
+                    <th>Operator</th>
+                    <th>Angka Kedua</th>
+                    <th>Hasil</th>
+                </tr>
+            </thead>
+            <tbody id="historyList"></tbody>
+        </table>
+    </div>
+
+    <script src="storage.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
