@@ -68,8 +68,8 @@ function performCalculation() {
         return;
     }
 
-    let firstNumber = parseInt(calculator.firstNumber);
-    let secondNumber = parseInt(calculator.displayNumber);
+    let firstNumber = parseFloat(calculator.firstNumber);
+    let secondNumber = parseFloat(calculator.displayNumber);
 
     let result = 0;
     if (calculator.operator === '+') result = firstNumber + secondNumber
