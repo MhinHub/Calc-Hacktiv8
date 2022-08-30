@@ -5,6 +5,19 @@ const calculator = {
     isWaitForSecondNumber: false,
 };
 
+let Toast = Swal.mixin({
+    toast: true,
+    position: 'bottom-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+})
+
+
 function updateDisplay() {
     document.querySelector('#displayNumber').innerText = calculator.displayNumber;
 }
@@ -38,23 +51,15 @@ function handleOperator(operator) {
         calculator.firstNumber = calculator.displayNumber;
         calculator.displayNumber = '0';
     } else {
-        alert("Anda belum menetapkan operator");
+        Toast.fire({
+            icon: 'warning',
+            title: 'Silahkan masukkan data yang ingin dihitung!',
+            color: '#333333',
+            background: '#ffa500',
+        })
     }
 
 }
-
-let Toast = Swal.mixin({
-    toast: true,
-    position: 'bottom-end',
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
-})
-
 
 
 function performCalculation() {
@@ -62,7 +67,7 @@ function performCalculation() {
         Toast.fire({
             icon: 'warning',
             title: 'Anda belum menetapkan operator',
-            color: '#fff',
+            color: '#333333',
             background: '#ffa500',
         })
         return;
