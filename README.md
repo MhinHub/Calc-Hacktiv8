@@ -6,4 +6,5 @@
 ## Features
 - Berbasis Progresive Web App (PWA)
 - Terdapat riwayat Kalkulasi 
+- Toast ketika kalkulasi salah input
 - Works Offline
