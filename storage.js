@@ -15,7 +15,7 @@ function putHistory(data) {
 
         historyData.unshift(data);
 
-        if (historyData.length > 9) {
+        if (historyData.length > 8) {
             historyData.pop();
         }
 
