@@ -1,3 +1,4 @@
+![HitCount](https://hits.dwyl.com/Mhinhub/Calc-Hacktiv8.svg?style=flat&show=unique)
 # Assigment 1 
 
 #### _Kalkulator Web App_
